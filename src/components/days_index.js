@@ -7,7 +7,7 @@ class daysIndex extends Component {
         daysIndex
       </div>
     );
-  };
+  }
 }
 
 export default daysIndex;
