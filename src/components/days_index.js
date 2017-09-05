@@ -5,8 +5,22 @@ class daysIndex extends Component {
     super(props);
 
     this.state = {
-      term: ''
+      birthday: 0,
+      age: 0
     };
+
+    this.birthdayChange = this.birthdayChange.bind(this);
+    this.ageChange = this.ageChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+
+  }
+
+  birthdayChange(event){
+    this.setState({birthday: event.target.value});
+  }
+
+  ageChange(event){
+    this.setState({age: event.target.value});
   }
 
   onFormSubmit(event){
@@ -14,14 +28,15 @@ class daysIndex extends Component {
   }
 
   render() {
-    if (!this.state.term) {
+    if (!this.state.birthday) {
       return (
         <div className="search-bar">
           <form className="input-group" onSubmit={this.onFormSubmit}>
             <input
               className="form-control"
-              value={this.state.term}
+              type="date"
               placeholder="enter your birthday"
+              onChange={this.birthdayChange}
                 />
               <span className="input-group-btn">
                 <button type="submit" className="btn btn-submit">
@@ -31,10 +46,18 @@ class daysIndex extends Component {
           </form>
         </div>
       );
-    } else if (this.state.term){
+    } else if (!this.state.age){
       return (
-        <div>
-          2
+        <div className="search-bar">
+          <form>
+            <label>
+              Please enter your expect age~
+            </label>
+            <input
+              type="number"
+              onChange={this.ageChange}
+              />
+          </form>
         </div>
       );
     }
