@@ -9,13 +9,15 @@ class daysIndex extends Component {
       birthdayTure: false,
       age: {},
       ageTrue: false,
-      left: {}
+      years: {},
+      timeOfDay: ""
     };
 
     this.birthdayChange = this.birthdayChange.bind(this);
     this.ageChange = this.ageChange.bind(this);
     this.birthdaySubmit = this.birthdaySubmit.bind(this);
     this.ageSubmit = this.ageSubmit.bind(this);
+    this.msToTime = this.msToTime.bind(this);
 
   }
 
@@ -42,13 +44,34 @@ class daysIndex extends Component {
 
   ageSubmit(event) {
     event.preventDefault();
+    const oneYear = 31536000000;
+    const today = new Date();
+    const diff = today - this.state.birthday;
+    const age = this.state.age;
+    const years = Math.round((age - diff ) / oneYear);
+    const hours = Math.floor(diff/age*24);
+    const minutes = Math.floor((diff/age)%1*60);
+    const timeOfDay = hours + ":" + minutes;
+    this.setState({timeOfDay: timeOfDay});
     this.setState({
-      left: this.state.age - this.state.birthday
+      years: years
     }, () => {
       console.log(this.state.left);
       this.setState({ageTrue: true});
     })
   }
+
+   msToTime(duration) {
+        var seconds = parseInt((duration/1000)%60)
+            , minutes = parseInt((duration/(1000*60))%60)
+            , hours = parseInt((duration/(1000*60*60))%24);
+
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+        return hours + ":" + minutes + ":" + seconds;
+    }
 
   render() {
     if (!this.state.birthdayTrue) {
@@ -81,17 +104,21 @@ class daysIndex extends Component {
     } else {
       return (
         <div>
+          <h2>
+            It is {this.state.timeOfDay} in your life~
+          </h2>
           <h3>
             you have
-            <span>
-              {this.state.left}
-            </span>
-            years left in your life~
+          </h3>
+          <h1>{this.state.years} years</h1>
+          <h3>
+            left in your life~
           </h3>
         </div>
       );
     }
   }
 }
+
 
 export default daysIndex;
