@@ -6,11 +6,10 @@ class daysIndex extends Component {
 
     this.state = {
       birthday: {},
-      birthdayTure : false,
+      birthdayTure: false,
       age: {},
       ageTrue: false,
-      left: {},
-      leftTrue: false
+      left: {}
     };
 
     this.birthdayChange = this.birthdayChange.bind(this);
@@ -20,94 +19,79 @@ class daysIndex extends Component {
 
   }
 
-  birthdayChange(event){
-    this.setState({birthday: Date.parse(event.target.value)},()=>{
+  birthdayChange(event) {
+    this.setState({
+      birthday: Date.parse(event.target.value)
+    }, () => {
       console.log(this.state.birthday);
     });
   }
 
-  ageChange(event){
-    this.setState({age: (event.target.value) * 31556908800}, ()=>{
+  ageChange(event) {
+    this.setState({
+      age: (event.target.value) * 31556908800
+    }, () => {
       console.log(this.state.age);
     });
   }
 
-  birthdaySubmit(event){
+  birthdaySubmit(event) {
     event.preventDefault();
     this.setState({birthdayTrue: true});
   }
 
-  ageSubmit(event){
+  ageSubmit(event) {
     event.preventDefault();
-    this.setState({left: this.state.birthday - this.state.age},() => {
+    this.setState({
+      left: this.state.age - this.state.birthday
+    }, () => {
       console.log(this.state.left);
       this.setState({ageTrue: true});
     })
   }
 
-  askBirthday(){
-    return (
-      <div className="search-bar">
-        <form className="input-group" onSubmit={this.birthdaySubmit}>
-          <input
-            className="form-control"
-            type="date"
-            placeholder="enter your birthday"
-            onChange={this.birthdayChange}
-              />
+  render() {
+    if (!this.state.birthdayTrue) {
+      return (
+        <div className="search-bar">
+          <form className="input-group" onSubmit={this.birthdaySubmit}>
+            <input className="form-control" type="date" placeholder="enter your birthday" onChange={this.birthdayChange}/>
             <span className="input-group-btn">
               <button type="submit" className="btn btn-submit">
                 enter
               </button>
             </span>
-        </form>
-      </div>
-    );
-  }
-
-  askAge(){
-    return (
-      <div className="search-bar">
-        <form>
-          <label>
-            Please enter your expect age~
-          </label>
-          <input
-            type="number"
-            onChange={this.ageChange}
-            />
+          </form>
+        </div>
+      );
+    } else if (!this.state.ageTrue) {
+      return (
+        <div className="search-bar">
+          <form className="input-group" onSubmit={this.ageSubmit}>
+            <label>
+              Please enter your expect age~
+            </label>
+            <input type="number" onChange={this.ageChange}/>
             <button type="submit" className="btn btn-submit">
               enter
             </button>
-        </form>
-      </div>
-    );
-  }
-
-  display(){
-    return (
-      <div>
-        <h3>
-          you have
-          <span>
-            {this.state.left}
-          </span>
-          years left in your life~
-        </h3>
-      </div>
-    );
-  }
-
-  render() {
-    if (!this.state.birthdayTrue) {
-      return < askBirthday />;
-    } else if (!this.state.ageTrue){
-      return < askAge />;
+          </form>
+        </div>
+      );
     } else {
-      return < display />
+      return (
+        <div>
+          <h3>
+            you have
+            <span>
+              {this.state.left}
+            </span>
+            years left in your life~
+          </h3>
+        </div>
+      );
     }
   }
 }
-
 
 export default daysIndex;
