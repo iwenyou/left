@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-import NavBar from './nav_bar';
-
 class daysIndex extends Component {
   constructor(props) {
     super(props);
@@ -96,7 +94,7 @@ class daysIndex extends Component {
                     <div className="form-group">
                       <input type="date" className="form-control" onChange={this.birthdayChange}/>
                     </div>
-                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block" value="Submit"/>
+                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
                   </form>
                 </div>
               </div>
@@ -117,7 +115,7 @@ class daysIndex extends Component {
                     <div className="form-group">
                       <input type="number" className="form-control" onChange={this.ageChange}/>
                     </div>
-                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block" value="Submit"/>
+                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
                   </form>
                 </div>
               </div>
@@ -132,7 +130,7 @@ class daysIndex extends Component {
             <div className="row">
               <div className="col-xs-12 info">
                 <p>
-                  It is {this.state.timeOfDay} in your life~
+                  It is {this.state.timeOfDay} am in your life~
                 </p>
                 <p>
                   you have {this.state.years} years left in your life~</p>

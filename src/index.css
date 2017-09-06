@@ -12,6 +12,12 @@ body {
   padding-bottom: 70px;
 }
 
+/*btn*/
+
+.btn-sharp {
+  border-radius:0;
+}
+
 
 /*    --------------------------------------------------
 	:: form Section
@@ -38,12 +44,17 @@ body {
   margin-bottom: 25px;
 }
 
+#form .form-control {
+  border-radius:0;
+}
+
 #form input {
   text-align: center;
 }
 
 #form .btn.btn-custom {
   font-size: 20px;
+  font-style: oblique;
   margin-bottom: 20px;
 }
 
