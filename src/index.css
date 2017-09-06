@@ -56,6 +56,7 @@ body {
 #form .btn.btn-custom {
   font-size: 20px;
   margin-bottom: 20px;
+  -webkit-appearance: none;
 }
 
 #form .forget {
