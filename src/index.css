@@ -45,7 +45,8 @@ body {
 }
 
 #form .form-control {
-  border-radius:0;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
 #form input {
@@ -54,7 +55,6 @@ body {
 
 #form .btn.btn-custom {
   font-size: 20px;
-  font-style: oblique;
   margin-bottom: 20px;
 }
 
@@ -77,6 +77,12 @@ select {
 }
 
 @media all and (max-width:450px) {
+
+  .container-fluid {
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+
   #form {
     width: 100%;
   }
