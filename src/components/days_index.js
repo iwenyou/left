@@ -48,9 +48,9 @@ class daysIndex extends Component {
     const today = new Date();
     const diff = today - this.state.birthday;
     const age = this.state.age;
-    const years = Math.round((age - diff ) / oneYear);
-    const hours = Math.floor(diff/age*24);
-    const minutes = Math.floor((diff/age)%1*60);
+    const years = Math.round((age - diff) / oneYear);
+    const hours = Math.floor(diff / age * 24);
+    const minutes = Math.floor((diff / age) % 1 * 60);
     const timeOfDay = hours + ":" + minutes;
     this.setState({timeOfDay: timeOfDay});
     this.setState({
@@ -61,56 +61,78 @@ class daysIndex extends Component {
     })
   }
 
-   msToTime(duration) {
-        var seconds = parseInt((duration/1000)%60)
-            , minutes = parseInt((duration/(1000*60))%60)
-            , hours = parseInt((duration/(1000*60*60))%24);
+  msToTime(duration) {
+    var seconds = parseInt((duration / 1000) % 60),
+      minutes = parseInt((duration / (1000 * 60)) % 60),
+      hours = parseInt((duration / (1000 * 60 * 60)) % 24);
 
-        hours = (hours < 10) ? "0" + hours : hours;
-        minutes = (minutes < 10) ? "0" + minutes : minutes;
-        seconds = (seconds < 10) ? "0" + seconds : seconds;
+    hours = (hours < 10)
+      ? "0" + hours
+      : hours;
+    minutes = (minutes < 10)
+      ? "0" + minutes
+      : minutes;
+    seconds = (seconds < 10)
+      ? "0" + seconds
+      : seconds;
 
-        return hours + ":" + minutes + ":" + seconds;
-    }
+    return hours + ":" + minutes + ":" + seconds;
+  }
 
   render() {
     if (!this.state.birthdayTrue) {
       return (
-        <div className="search-bar">
-          <form className="input-group" onSubmit={this.birthdaySubmit}>
-            <input className="form-control" type="date" placeholder="enter your birthday" onChange={this.birthdayChange}/>
-            <span className="input-group-btn">
-              <button type="submit" className="btn btn-submit">
-                enter
-              </button>
-            </span>
-          </form>
+        <div id="form">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-xs-12">
+                <div className="form-wrap">
+                  <h1>Please enter your birthday</h1>
+                  <form role="form" method="post" id="login-form" onSubmit={this.birthdaySubmit}>
+                    <div className="form-group">
+                      <input type="date" className="form-control" onChange={this.birthdayChange}/>
+                    </div>
+                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block" value="Submit"/>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       );
     } else if (!this.state.ageTrue) {
       return (
-        <div className="search-bar">
-          <form className="input-group" onSubmit={this.ageSubmit}>
-            <label>
-              Please enter your expect age~
-            </label>
-            <input type="number" onChange={this.ageChange}/>
-            <button type="submit" className="btn btn-submit">
-              enter
-            </button>
-          </form>
+
+        <div id="form">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-xs-12">
+                <div className="form-wrap">
+                  <h1>Please enter your expect age</h1>
+                  <form role="form" method="post" id="login-form" onSubmit={this.ageSubmit}>
+                    <div className="form-group">
+                      <input type="number" className="form-control" onChange={this.ageChange}/>
+                    </div>
+                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block" value="Submit"/>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       );
     } else {
       return (
         <div>
           <h2>
-            It is {this.state.timeOfDay} in your life~
+            It is {this.state.timeOfDay}
+            in your life~
           </h2>
           <h3>
             you have
           </h3>
-          <h1>{this.state.years} years</h1>
+          <h1>{this.state.years}
+            years</h1>
           <h3>
             left in your life~
           </h3>
@@ -119,6 +141,5 @@ class daysIndex extends Component {
     }
   }
 }
-
 
 export default daysIndex;
