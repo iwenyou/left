@@ -70,7 +70,13 @@ body {
   text-align: center;
 }
 
-@media (max-width:320px) {
+select {
+    -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+
+@media all and (max-width:450px) {
   #form {
     width: 100%;
   }
