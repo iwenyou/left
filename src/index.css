@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Dosis', sans-serif;
 }
 
 .container-fluid {
@@ -35,6 +38,10 @@ body {
   margin-bottom: 25px;
 }
 
+#form input {
+  text-align: center;
+}
+
 #form .btn.btn-custom {
   font-size: 20px;
   margin-bottom: 20px;
@@ -44,6 +51,12 @@ body {
   font-size: 13px;
   text-align: center;
   display: block;
+}
+
+/*index*/
+
+.info {
+  text-align: center;
 }
 
 @media all and (max-width:450px) {

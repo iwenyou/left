@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import NavBar from './nav_bar';
+
 class daysIndex extends Component {
   constructor(props) {
     super(props);
@@ -80,6 +82,8 @@ class daysIndex extends Component {
   }
 
   render() {
+
+
     if (!this.state.birthdayTrue) {
       return (
         <div id="form">
@@ -123,19 +127,18 @@ class daysIndex extends Component {
       );
     } else {
       return (
-        <div>
-          <h2>
-            It is {this.state.timeOfDay}
-            in your life~
-          </h2>
-          <h3>
-            you have
-          </h3>
-          <h1>{this.state.years}
-            years</h1>
-          <h3>
-            left in your life~
-          </h3>
+        <div className="index">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-xs-12 info">
+                <p>
+                  It is {this.state.timeOfDay} in your life~
+                </p>
+                <p>
+                  you have {this.state.years} years left in your life~</p>
+              </div>
+            </div>
+          </div>
         </div>
       );
     }
