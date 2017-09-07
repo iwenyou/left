@@ -77,7 +77,7 @@ class daysIndex extends Component {
                   <h1>Please enter your birthday</h1>
                   <form role="form" method="post" id="login-form" onSubmit={this.birthdaySubmit}>
                     <div className="form-group">
-                      <input type="date" className="form-control" onChange={this.birthdayChange}/>
+                      <input type="date" className="form-control" max="2012-12-31" onChange={this.birthdayChange}/>
                     </div>
                     <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
                   </form>
@@ -98,7 +98,7 @@ class daysIndex extends Component {
                   <h1>How long you think you will live? (years)</h1>
                   <form role="form" method="post" id="login-form" onSubmit={this.ageSubmit}>
                     <div className="form-group">
-                      <input type="number" className="form-control" onChange={this.ageChange}/>
+                      <input type="number" className="form-control" min="20" onChange={this.ageChange}/>
                     </div>
                     <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
                   </form>
@@ -118,7 +118,7 @@ class daysIndex extends Component {
         <div className="index">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-xs-12 info">
+              <div className="col-xs-12">
                 <p>
                   It is {this.state.timeOfDay}
                   <span> </span>
@@ -136,35 +136,37 @@ class daysIndex extends Component {
                   <span> </span>
                    days until the end...
                  </p>
-                 <p>
+                 <h4>
                    In these days, you will have
-                 </p>
-                 <p>
-                   {this.state.weekends}
-                   <span> </span>
-                   weekends
-                 </p>
-                 <p>
-                   have
-                   <span> </span>
-                   {Math.round(this.state.days/365)*127}
-                   <span> </span>
-                   times of sex
-                 </p>
-                 <p>
-                   eat
-                   <span> </span>
-                   {this.state.days*3}
-                   <span> </span>
-                   meal
-                 </p>
-                 <p>
-                   receive Chirsmas present
-                   <span> </span>
-                   {Math.round(this.state.days/365)}
-                   <span> </span>
-                   more times
-                 </p>
+                 </h4>
+                 <div className="info">
+                   <p>
+                     {this.state.weekends}
+                     <span> </span>
+                     weekends
+                   </p>
+                   <p>
+                     have
+                     <span> </span>
+                     {Math.round(this.state.days/365)*127}
+                     <span> </span>
+                     times of sex
+                   </p>
+                   <p>
+                     eat
+                     <span> </span>
+                     {this.state.days*3}
+                     <span> </span>
+                     meal
+                   </p>
+                   <p>
+                     receive Chirsmas present
+                     <span> </span>
+                     {Math.round(this.state.days/365)}
+                     <span> </span>
+                     more times
+                   </p>
+                 </div>
               </div>
             </div>
           </div>

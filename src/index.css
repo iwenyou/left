@@ -7,9 +7,6 @@ body {
   font-family: 'Dosis', sans-serif;
 }
 
-p {
-  font-size: 25px;
-}
 
 .line_break {
   white-space: pre-line;
@@ -209,6 +206,10 @@ select {
   .form .form-wrap {
     width: 80%;
     margin: 0 auto;
+  }
+
+  .info {
+    font-size: 15px;
   }
 
 }
