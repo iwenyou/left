@@ -17,8 +17,6 @@ class daysIndex extends Component {
     this.ageChange = this.ageChange.bind(this);
     this.birthdaySubmit = this.birthdaySubmit.bind(this);
     this.ageSubmit = this.ageSubmit.bind(this);
-    this.msToTime = this.msToTime.bind(this);
-
   }
 
   birthdayChange(event) {
@@ -57,30 +55,12 @@ class daysIndex extends Component {
     })
   }
 
-  msToTime(duration) {
-    var seconds = parseInt((duration / 1000) % 60),
-      minutes = parseInt((duration / (1000 * 60)) % 60),
-      hours = parseInt((duration / (1000 * 60 * 60)) % 24);
-
-    hours = (hours < 10)
-      ? "0" + hours
-      : hours;
-    minutes = (minutes < 10)
-      ? "0" + minutes
-      : minutes;
-    seconds = (seconds < 10)
-      ? "0" + seconds
-      : seconds;
-
-    return hours + ":" + minutes + ":" + seconds;
-  }
-
   render() {
 
 
     if (!this.state.birthdayTrue) {
       return (
-        <div id="form">
+        <div className="form">
           <div className="container-fluid">
             <div className="row">
               <div className="col-xs-12">
@@ -101,12 +81,12 @@ class daysIndex extends Component {
     } else if (!this.state.ageTrue) {
       return (
 
-        <div id="form">
+        <div className="form">
           <div className="container-fluid">
             <div className="row">
               <div className="col-xs-12">
                 <div className="form-wrap">
-                  <h1>Please enter your expect age</h1>
+                  <h1>How long you think you will live? (years)</h1>
                   <form role="form" method="post" id="login-form" onSubmit={this.ageSubmit}>
                     <div className="form-group">
                       <input type="number" className="form-control" onChange={this.ageChange}/>
@@ -126,10 +106,10 @@ class daysIndex extends Component {
             <div className="row">
               <div className="col-xs-12 info">
                 <p>
-                  It is {this.state.timeOfDay} am in your life~
+                  It is {this.state.timeOfDay} am in your life
                 </p>
                 <p>
-                  you have {this.state.years} years left in your life~</p>
+                  {this.state.years} years until the end...</p>
               </div>
             </div>
           </div>

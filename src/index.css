@@ -8,8 +8,12 @@ body {
 }
 
 .container-fluid {
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 70px;
+}
+
+.index {
+  padding-top: 165px;
 }
 
 /*navbar*/
@@ -22,6 +26,7 @@ body {
       margin-bottom: 0;
       font-size: 12px;
       letter-spacing: 5px;
+      text-align: center;
   }
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
@@ -42,16 +47,16 @@ body {
 	:: form Section
 	-------------------------------------------------- */
 
-#form {
+.form {
   padding-top: 50px
 }
 
-#form .form-wrap {
+.form .form-wrap {
   width: 30%;
   margin: 0 auto;
 }
 
-#form h1 {
+.form h1 {
   color: black;
   font-size: 18px;
   text-align: center;
@@ -59,26 +64,26 @@ body {
   padding-bottom: 20px;
 }
 
-#form .form-group {
+.form .form-group {
   margin-bottom: 25px;
 }
 
-#form .form-control {
+.form .form-control {
   border-radius: 0;
   -webkit-appearance: none;
 }
 
-#form input {
+.form input {
   text-align: center;
 }
 
-#form .btn.btn-custom {
+.form .btn.btn-custom {
   font-size: 20px;
   margin-bottom: 20px;
   -webkit-appearance: none;
 }
 
-#form .forget {
+.form .forget {
   font-size: 13px;
   text-align: center;
   display: block;
@@ -99,15 +104,15 @@ select {
 @media all and (max-width:450px) {
 
   .container-fluid {
-    padding-top: 15px;
+    padding-top: 70px;
     padding-bottom: 70px;
   }
 
-  #form {
+  .form {
     width: 100%;
   }
 
-  #form .form-wrap {
+  .form .form-wrap {
     width: 80%;
     margin: 0 auto;
   }
