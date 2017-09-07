@@ -190,6 +190,14 @@ select {
    appearance: none;
 }
 
+.time {
+  text-align: center;
+}
+
+.ptop {
+  padding-top: 20px;
+}
+
 
 
 @media all and (max-width:450px) {

@@ -77,7 +77,7 @@ class daysIndex extends Component {
                   <h1>Please enter your birthday</h1>
                   <form role="form" method="post" id="login-form" onSubmit={this.birthdaySubmit}>
                     <div className="form-group">
-                      <input type="date" className="form-control" max="2012-12-31" value="1989-06-15" onChange={this.birthdayChange}/>
+                      <input type="date" className="form-control" max="2012-12-31" onChange={this.birthdayChange}/>
                     </div>
                     <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
                   </form>
@@ -119,24 +119,26 @@ class daysIndex extends Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-xs-12">
-                <p>
-                  It is {this.state.timeOfDay}
-                  <span> </span>
-                   am in your life
-                </p>
-                <p>
-                  you have spent
+                <div className="time">
                   <p>
-                    {Math.round(this.state.diff / 60000)}
+                    It is {this.state.timeOfDay}
+                    <span> </span>
+                     am in your life
                   </p>
-                  minutes in this world
-                </p>
-                <p>
-                  {this.state.days}
-                  <span> </span>
-                   days until the end...
-                 </p>
-                 <h4>
+                  <p>
+                    you have spent
+                    <p>
+                      {Math.round(this.state.diff / 60000)}
+                    </p>
+                    minutes in this world
+                  </p>
+                  <p>
+                    {this.state.days}
+                    <span> </span>
+                     days until the end...
+                   </p>
+                </div>
+                 <h4 className="ptop">
                    In these days, you will have
                  </h4>
                  <div className="info">
