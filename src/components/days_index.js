@@ -9,8 +9,13 @@ class daysIndex extends Component {
       birthdayTure: false,
       age: {},
       ageTrue: false,
-      years: {},
-      timeOfDay: ""
+      days: {},
+      hours: {},
+      minutes: {},
+      timeOfDay: "",
+      weekends: {},
+      diff: {}
+
     };
 
     this.birthdayChange = this.birthdayChange.bind(this);
@@ -39,24 +44,28 @@ class daysIndex extends Component {
 
   ageSubmit(event) {
     event.preventDefault();
-    const oneYear = 31536000000;
+    const oneDay = 60*60*24*1000;
     const today = new Date();
     const diff = today - this.state.birthday;
     const age = this.state.age;
-    const years = Math.round((age - diff) / oneYear);
+    const days = Math.round((age - diff) / oneDay);
     const hours = Math.floor(diff / age * 24);
     const minutes = Math.floor((diff / age) % 1 * 60);
     const timeOfDay = hours + ":" + minutes;
-    this.setState({timeOfDay: timeOfDay});
+    const weekends = Math.floor(days/7);
     this.setState({
-      years: years
+      timeOfDay: timeOfDay,
+      hours: hours,
+      minutes: minutes,
+      days: days,
+      weekends: weekends,
+      diff: diff
     }, () => {
       this.setState({ageTrue: true});
     })
   }
 
   render() {
-
 
     if (!this.state.birthdayTrue) {
       return (
@@ -100,16 +109,62 @@ class daysIndex extends Component {
         </div>
       );
     } else {
+      // const setHours = {
+      //
+      // };
+      // const minutes = `transform:rotate${this.state.minutes}deg;`;
+
       return (
         <div className="index">
           <div className="container-fluid">
             <div className="row">
               <div className="col-xs-12 info">
                 <p>
-                  It is {this.state.timeOfDay} am in your life
+                  It is {this.state.timeOfDay}
+                  <span> </span>
+                   am in your life
                 </p>
                 <p>
-                  {this.state.years} years until the end...</p>
+                  you have spent
+                  <p>
+                    {Math.round(this.state.diff / 60000)}
+                  </p>
+                  minutes in this world
+                </p>
+                <p>
+                  {this.state.days}
+                  <span> </span>
+                   days until the end...
+                 </p>
+                 <p>
+                   In these days, you will have
+                 </p>
+                 <p>
+                   {this.state.weekends}
+                   <span> </span>
+                   weekends
+                 </p>
+                 <p>
+                   have
+                   <span> </span>
+                   {Math.round(this.state.days/365)*127}
+                   <span> </span>
+                   times of sex
+                 </p>
+                 <p>
+                   eat
+                   <span> </span>
+                   {this.state.days*3}
+                   <span> </span>
+                   meal
+                 </p>
+                 <p>
+                   receive Chirsmas present
+                   <span> </span>
+                   {Math.round(this.state.days/365)}
+                   <span> </span>
+                   more times
+                 </p>
               </div>
             </div>
           </div>
