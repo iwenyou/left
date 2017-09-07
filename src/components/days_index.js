@@ -138,9 +138,11 @@ class daysIndex extends Component {
                      days until the end...
                    </p>
                 </div>
-                 <h4 className="ptop">
-                   In these days, you will have
-                 </h4>
+                <div className="col-xs-offset-0 col-md-offset-4">
+                  <h4 className="ptop">
+                    In these days, you will have
+                  </h4>
+                </div>
                  <div className="info">
                    <p>
                      {this.state.weekends}
