@@ -159,10 +159,10 @@ class daysIndex extends Component {
                      <span> </span>
                      {this.state.days*3}
                      <span> </span>
-                     meal
+                     meals
                    </p>
                    <p>
-                     receive Chirsmas present
+                     receive Chirsmas presents
                      <span> </span>
                      {Math.round(this.state.days/365)}
                      <span> </span>
