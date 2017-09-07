@@ -35,27 +35,26 @@ class daysIndex extends Component {
 
   birthdaySubmit(event) {
     event.preventDefault();
-    
+
     this.setState({birthdayTrue: true});
   }
 
   ageSubmit(event) {
     event.preventDefault();
-    this.setState({ageTrue: true});
-    // const oneYear = 31536000000;
-    // const today = new Date();
-    // const diff = today - this.state.birthday;
-    // const age = this.state.age;
-    // const years = Math.round((age - diff) / oneYear);
-    // const hours = Math.floor(diff / age * 24);
-    // const minutes = Math.floor((diff / age) % 1 * 60);
-    // const timeOfDay = hours + ":" + minutes;
-    // this.setState({timeOfDay: timeOfDay});
-    // this.setState({
-    //   years: years
-    // }, () => {
-    //   this.setState({ageTrue: true});
-    // })
+    const oneYear = 31536000000;
+    const today = new Date();
+    const diff = today - this.state.birthday;
+    const age = this.state.age;
+    const years = Math.round((age - diff) / oneYear);
+    const hours = Math.floor(diff / age * 24);
+    const minutes = Math.floor((diff / age) % 1 * 60);
+    const timeOfDay = hours + ":" + minutes;
+    this.setState({timeOfDay: timeOfDay});
+    this.setState({
+      years: years
+    }, () => {
+      this.setState({ageTrue: true});
+    })
   }
 
   msToTime(duration) {
