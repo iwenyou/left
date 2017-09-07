@@ -21,6 +21,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
+        <App />
         <Switch>
           <Route path="/" component={daysIndex} />
         </Switch>
