@@ -129,8 +129,10 @@ class daysIndex extends Component {
                     you have spent
                     <p>
                       {Math.round(this.state.diff / 60000)}
+                      <span> </span>
+                      minutes
                     </p>
-                    minutes in this world
+                    in this world
                   </p>
                   <p>
                     {this.state.days}
@@ -138,7 +140,7 @@ class daysIndex extends Component {
                      days until the end...
                    </p>
                 </div>
-                <div className="col-xs-offset-0 col-md-offset-4">
+                <div className="col-xs-offset-0 col-md-offset-5">
                   <h4 className="ptop">
                     In these days, you will have
                   </h4>
@@ -164,7 +166,7 @@ class daysIndex extends Component {
                      meals
                    </p>
                    <p>
-                     receive Chirsmas presents
+                     open Chirsmas presents
                      <span> </span>
                      {Math.round(this.state.days/365)}
                      <span> </span>
