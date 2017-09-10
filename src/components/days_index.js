@@ -142,11 +142,12 @@ class daysIndex extends Component {
                 </div>
                 <div className="col-xs-offset-0 col-md-offset-5">
                   <h4 className="ptop">
-                    In these days, you will have
+                    In these days, you will
                   </h4>
                 </div>
                  <div className="info">
-                   <p>
+                   <p>have
+                     <span> </span>
                      {this.state.weekends}
                      <span> </span>
                      weekends
@@ -166,7 +167,7 @@ class daysIndex extends Component {
                      meals
                    </p>
                    <p>
-                     open Chirsmas presents
+                     receive Chirsmas presents
                      <span> </span>
                      {Math.round(this.state.days/365)}
                      <span> </span>
