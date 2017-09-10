@@ -11,7 +11,7 @@ class App extends Component {
         <nav className="navbar navbar-default">
           <div className="container">
             <div className="navbar-header">
-              <a className="navbar-brand col-xs-offset-3" href="#">Time Story</a>
+              <a className="navbar-brand col-xs-offset-3" href="/">Time Story</a>
             </div>
           </div>
         </nav>
