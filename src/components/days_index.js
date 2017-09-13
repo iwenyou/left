@@ -142,7 +142,7 @@ class daysIndex extends Component {
                 </div>
                 <div className="col-xs-offset-0 col-md-offset-5">
                   <h4 className="ptop">
-                    In these days, you will
+                    In these days, you will probably 
                   </h4>
                 </div>
                  <div className="info">
