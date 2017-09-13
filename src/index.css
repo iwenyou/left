@@ -215,7 +215,7 @@ select {
 
 @media all and (max-width:450px) {
 
-  .container-fluid {
+  .form .container-fluid {
     padding-top: 30px;
     padding-bottom: 70px;
   }

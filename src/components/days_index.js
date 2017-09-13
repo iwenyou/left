@@ -77,7 +77,7 @@ class daysIndex extends Component {
                   <h1>Please enter your birthday</h1>
                   <form role="form" method="post" id="login-form" onSubmit={this.birthdaySubmit}>
                     <div className="form-group">
-                      <input type="date" className="form-control" max="2012-12-31" onChange={this.birthdayChange}/>
+                      <input type="date" className="form-control" max="2012-12-31" min="1910-12-31" onChange={this.birthdayChange}/>
                     </div>
                     <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
                   </form>
@@ -98,7 +98,7 @@ class daysIndex extends Component {
                   <h1>How long you think you will live? (years)</h1>
                   <form role="form" method="post" id="login-form" onSubmit={this.ageSubmit}>
                     <div className="form-group">
-                      <input type="number" className="form-control" min="20" onChange={this.ageChange}/>
+                      <input type="number" className="form-control" min="" max="122" onChange={this.ageChange}/>
                     </div>
                     <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
                   </form>
@@ -142,7 +142,7 @@ class daysIndex extends Component {
                 </div>
                 <div className="col-xs-offset-0 col-md-offset-5">
                   <h4 className="ptop">
-                    In these days, you will probably 
+                    In these days, you will probably
                   </h4>
                 </div>
                  <div className="info">

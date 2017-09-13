@@ -9,7 +9,8 @@ class App extends Component {
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-              <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span className="sr-only">Toggle navigation</span>
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
@@ -17,7 +18,7 @@ class App extends Component {
               <a className="navbar-brand col-xs-offset-3" href="/">Time Story</a>
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
-              <ul className="nav navbar-nav">
+              <ul className="nav navbar-nav navbar-right">
                 <li>
                   <a href="/about">About Me</a>
                 </li>
