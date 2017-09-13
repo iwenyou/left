@@ -200,6 +200,17 @@ select {
   padding-top: 20px;
 }
 
+#aboutMe {
+  padding-top: 80px;
+  text-align: center;
+}
+
+#aboutMe p {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 
 
 @media all and (max-width:450px) {
@@ -220,6 +231,12 @@ select {
 
   .info {
     font-size: 15px;
+  }
+
+  #aboutMe p {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
 }

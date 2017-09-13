@@ -10,6 +10,7 @@ import './index.css';
 
 import App from './components/App';
 import daysIndex from './components/days_index';
+import aboutMe from './components/about_me';
 
 import reducers from './reducers';
 
@@ -23,6 +24,7 @@ ReactDOM.render(
       <div>
         <App />
         <Switch>
+          <Route path="/about" component={aboutMe} />
           <Route path="/" component={daysIndex} />
         </Switch>
       </div>
