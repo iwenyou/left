@@ -1,16 +1,23 @@
 import React from 'react';
 
-const NavBar = (props) => {
+const NavBar = props => {
   return (
     <nav className="navbar navbar-default">
       <div className="container">
         <div className="navbar-header">
-          <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+          <button
+            type="button"
+            className="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
           </button>
-          <a className="navbar-brand" href="#">Me</a>
+          <a className="navbar-brand" href="#">
+            Me
+          </a>
         </div>
         <div className="collapse navbar-collapse" id="myNavbar">
           <ul className="nav navbar-nav navbar-right">
@@ -28,6 +35,6 @@ const NavBar = (props) => {
       </div>
     </nav>
   );
-}
+};
 
 export default NavBar;

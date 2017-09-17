@@ -2,9 +2,7 @@ import React from 'react';
 
 const PrograssBar = ({ percentage }) => {
   if (!percentage) {
-    return <div>
-      loading...
-    </div>
+    return <div>loading...</div>;
   }
 
   return (
@@ -12,7 +10,7 @@ const PrograssBar = ({ percentage }) => {
       <div id="main_container">
         <div id="pbar" className="progress-pie-chart" data-percent="0">
           <div className="ppc-progress">
-            <div className="ppc-progress-fill"></div>
+            <div className="ppc-progress-fill" />
           </div>
           <div className="ppc-percents">
             <div className="pcc-percents-wrapper">
@@ -21,10 +19,10 @@ const PrograssBar = ({ percentage }) => {
           </div>
         </div>
 
-        <progress style="display: none" id="progress_bar" value="0" max="100"></progress>
+        <progress style="display: none" id="progress_bar" value="0" max="100" />
       </div>
     </div>
   );
-}
+};
 
 export default PrograssBar;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class daysIndex extends Component {
   constructor(props) {
@@ -12,10 +12,9 @@ class daysIndex extends Component {
       days: {},
       hours: {},
       minutes: {},
-      timeOfDay: "",
+      timeOfDay: '',
       weekends: {},
       diff: {}
-
     };
 
     this.birthdayChange = this.birthdayChange.bind(this);
@@ -32,41 +31,43 @@ class daysIndex extends Component {
 
   ageChange(event) {
     this.setState({
-      age: (event.target.value) * 31556908800
+      age: event.target.value * 31556908800
     });
   }
 
   birthdaySubmit(event) {
     event.preventDefault();
 
-    this.setState({birthdayTrue: true});
+    this.setState({ birthdayTrue: true });
   }
 
   ageSubmit(event) {
     event.preventDefault();
-    const oneDay = 60*60*24*1000;
+    const oneDay = 60 * 60 * 24 * 1000;
     const today = new Date();
     const diff = today - this.state.birthday;
     const age = this.state.age;
     const days = Math.round((age - diff) / oneDay);
     const hours = Math.floor(diff / age * 24);
-    const minutes = Math.floor((diff / age) % 1 * 60);
-    const timeOfDay = hours + ":" + minutes;
-    const weekends = Math.floor(days/7);
-    this.setState({
-      timeOfDay: timeOfDay,
-      hours: hours,
-      minutes: minutes,
-      days: days,
-      weekends: weekends,
-      diff: diff
-    }, () => {
-      this.setState({ageTrue: true});
-    })
+    const minutes = Math.floor(((diff / age) % 1) * 60);
+    const timeOfDay = hours + ':' + minutes;
+    const weekends = Math.floor(days / 7);
+    this.setState(
+      {
+        timeOfDay: timeOfDay,
+        hours: hours,
+        minutes: minutes,
+        days: days,
+        weekends: weekends,
+        diff: diff
+      },
+      () => {
+        this.setState({ ageTrue: true });
+      }
+    );
   }
 
   render() {
-
     if (!this.state.birthdayTrue) {
       return (
         <div className="form">
@@ -75,11 +76,27 @@ class daysIndex extends Component {
               <div className="col-xs-12">
                 <div className="form-wrap">
                   <h1>Please enter your birthday</h1>
-                  <form role="form" method="post" id="login-form" onSubmit={this.birthdaySubmit}>
+                  <form
+                    role="form"
+                    method="post"
+                    id="login-form"
+                    onSubmit={this.birthdaySubmit}
+                  >
                     <div className="form-group">
-                      <input type="date" className="form-control" max="2012-12-31" min="1910-12-31" onChange={this.birthdayChange}/>
+                      <input
+                        type="date"
+                        className="form-control"
+                        max="2012-12-31"
+                        min="1910-12-31"
+                        onChange={this.birthdayChange}
+                      />
                     </div>
-                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
+                    <input
+                      type="submit"
+                      id="btn-login"
+                      className="btn btn-custom btn-lg btn-block btn-sharp"
+                      value="Submit"
+                    />
                   </form>
                 </div>
               </div>
@@ -89,18 +106,33 @@ class daysIndex extends Component {
       );
     } else if (!this.state.ageTrue) {
       return (
-
         <div className="form">
           <div className="container-fluid">
             <div className="row">
               <div className="col-xs-12">
                 <div className="form-wrap">
                   <h1>How long you think you will live? (years)</h1>
-                  <form role="form" method="post" id="login-form" onSubmit={this.ageSubmit}>
+                  <form
+                    role="form"
+                    method="post"
+                    id="login-form"
+                    onSubmit={this.ageSubmit}
+                  >
                     <div className="form-group">
-                      <input type="number" className="form-control" min="" max="122" onChange={this.ageChange}/>
+                      <input
+                        type="number"
+                        className="form-control"
+                        min=""
+                        max="122"
+                        onChange={this.ageChange}
+                      />
                     </div>
-                    <input type="submit" id="btn-login" className="btn btn-custom btn-lg btn-block btn-sharp" value="Submit"/>
+                    <input
+                      type="submit"
+                      id="btn-login"
+                      className="btn btn-custom btn-lg btn-block btn-sharp"
+                      value="Submit"
+                    />
                   </form>
                 </div>
               </div>
@@ -123,7 +155,7 @@ class daysIndex extends Component {
                   <p>
                     It is {this.state.timeOfDay}
                     <span> </span>
-                     am in your life
+                    am in your life
                   </p>
                   <p>
                     you have spent
@@ -137,43 +169,42 @@ class daysIndex extends Component {
                   <p>
                     {this.state.days}
                     <span> </span>
-                     days until the end...
-                   </p>
+                    days until the end...
+                  </p>
                 </div>
                 <div className="col-xs-offset-0 col-md-offset-5">
-                  <h4 className="ptop">
-                    In these days, you will probably
-                  </h4>
+                  <h4 className="ptop">In these days, you will probably</h4>
                 </div>
-                 <div className="info">
-                   <p>have
-                     <span> </span>
-                     {this.state.weekends}
-                     <span> </span>
-                     weekends
-                   </p>
-                   <p>
-                     have
-                     <span> </span>
-                     {Math.round(this.state.days/365)*127}
-                     <span> </span>
-                     times of sex
-                   </p>
-                   <p>
-                     eat
-                     <span> </span>
-                     {this.state.days*3}
-                     <span> </span>
-                     meals
-                   </p>
-                   <p>
-                     receive Chirsmas presents
-                     <span> </span>
-                     {Math.round(this.state.days/365)}
-                     <span> </span>
-                     more times
-                   </p>
-                 </div>
+                <div className="info">
+                  <p>
+                    have
+                    <span> </span>
+                    {this.state.weekends}
+                    <span> </span>
+                    weekends
+                  </p>
+                  <p>
+                    have
+                    <span> </span>
+                    {Math.round(this.state.days / 365) * 127}
+                    <span> </span>
+                    times of sex
+                  </p>
+                  <p>
+                    eat
+                    <span> </span>
+                    {this.state.days * 3}
+                    <span> </span>
+                    meals
+                  </p>
+                  <p>
+                    receive Chirsmas presents
+                    <span> </span>
+                    {Math.round(this.state.days / 365)}
+                    <span> </span>
+                    more times
+                  </p>
+                </div>
               </div>
             </div>
           </div>
